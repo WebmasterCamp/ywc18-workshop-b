@@ -90,11 +90,11 @@ const Game = () => {
   return (
     <Container>
       <TextCenter>
-        <BaseHeader variant="h1">Let&apos;s do you first challenge</BaseHeader>
         {!isReady ? (
           <>
-            <ScanText>Scan QR Code to</ScanText>
-            <JoinText>Join the game</JoinText>
+            <BaseHeader variant="h1">มาเริ่มเล่นชาเลนจ์แรกกัน</BaseHeader>
+            <ScanText>โปรดแสกน QR Code</ScanText>
+            <JoinText>เพื่อเริ่มเกม :D</JoinText>
             <CardContainer>
               <Card>
                 <CardContent>
@@ -124,14 +124,15 @@ const Game = () => {
                 color: #a9a9a9;
               `}
             >
-              Don&apos;t have smartphone?
+              ไม่สะดวกใช้โทรศัพท์ตอนนี้?
             </UseFont>
             <Button variant="contained" size="large" onClick={isForceReady}>
-              Join without smartphone
+              เล่นแบบไม่ใช้โทรศัพท์
             </Button>
           </>
         ) : (
           <>
+            <BaseHeader variant="h1">มาเริ่มกันเลย!</BaseHeader>
             <p>{JSON.stringify(data)}</p>
           </>
         )}
