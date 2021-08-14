@@ -1,6 +1,8 @@
+import { ThemeProvider } from '@material-ui/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useEffect } from 'react'
+import theme from 'src/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -28,7 +30,9 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta name="description" content="App Name" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={theme}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   )
 }
