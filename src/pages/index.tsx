@@ -8,7 +8,7 @@ import styled from '@emotion/styled'
 
 const Row = styled.div`
   display: flex;
-  align-items: center;
+  align-items: top;
   justify-content: center;
 `
 
@@ -30,7 +30,7 @@ export default function Home() {
           padding: 80px;
         `}
       >
-        <img src="/img/logo_landing.png" alt="" width="400" height="110" />
+        <img src="/img/logo_landing.png" alt="" width="400" height="110" style={{ maxWidth: '100%', height: 'auto' }} />
         <h1 style={{ color: '#F98820', margin: '8px 0' }}>Office Syndrome Buddy</h1>
         <p style={{ margin: 0, fontSize: '1.1rem' }}>เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!</p>
         <br />
@@ -41,6 +41,7 @@ export default function Home() {
           size="large"
           className={css`
             margin-right: 8px;
+            margin-bottom: 8px;
             color: white;
           `}
           onClick={() => router.push('/start/1')}
@@ -50,6 +51,10 @@ export default function Home() {
         <Button
           variant="outlined"
           size="large"
+          className={css`
+            margin-right: 8px;
+            margin-bottom: 8px;
+          `}
           onClick={() =>
             // scroll to bottom
             window.scrollTo(0, document.body.scrollHeight)
@@ -77,7 +82,7 @@ export default function Home() {
           </h2>
           <Row>
             <Column>
-              <img src="/img/fun.png" alt="" width="144" height="144" />
+              <img src="/img/fun.png" alt="" width="144" height="144" style={{ maxWidth: '33%', height: 'auto' }} />
               <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>สนุก</h3>
               <p>
                 บำบัด Office Syndrome
@@ -86,7 +91,7 @@ export default function Home() {
               </p>
             </Column>
             <Column>
-              <img src="/img/fast.png" alt="" width="144" height="144" />
+              <img src="/img/fast.png" alt="" width="144" height="144" style={{ maxWidth: '33%', height: 'auto' }} />
               <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>รวดเร็ว</h3>
               <p>
                 ใช้เวลาเล่นชาเลนจ์เฉลี่ย
@@ -95,7 +100,7 @@ export default function Home() {
               </p>
             </Column>
             <Column>
-              <img src="/img/special.png" alt="" width="144" height="144" />
+              <img src="/img/special.png" alt="" width="144" height="144" style={{ maxWidth: '33%', height: 'auto' }} />
               <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>ฟรี</h3>
               <p>
                 สุขภาพดี
