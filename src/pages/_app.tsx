@@ -2,7 +2,7 @@ import { ThemeProvider } from '@material-ui/core'
 import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useEffect } from 'react'
-import theme from 'src/theme'
+import theme from '@/theme'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
