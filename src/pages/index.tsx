@@ -24,12 +24,13 @@ export default function Home() {
           background: url('/img/landing.jpg');
           background-size: cover;
           background-position: center center;
-          padding: 48px 80px;
+          padding: 80px;
         `}
       >
         <img src="/img/logo_landing.png" alt="" width="400" height="110" />
-        <h1>Office Syndrome Buddy</h1>
-        <p>เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!</p>
+        <h1 style={{ color: '#F98820', margin: '8px 0' }}>Office Syndrome Buddy</h1>
+        <p style={{ margin: 0 }}>เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!</p>
+        <br />
         <br />
         <br />
         <Button
