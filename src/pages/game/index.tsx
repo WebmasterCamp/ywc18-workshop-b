@@ -158,7 +158,7 @@ const Game = () => {
                 className={css`
                   color: #a9a9a9;
                 `}
-                href={'/game/' + currentGid}
+                href={windowUrl + '/' + currentGid}
               >
                 {windowUrl + '/' + currentGid}
               </a>
