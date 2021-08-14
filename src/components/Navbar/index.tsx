@@ -4,13 +4,15 @@ import Link from 'next/link'
 
 import { Container, MenuItem, StyledAvatar } from './styled'
 
+import icon from '../../../public/icon-full.svg'
+
 interface NavbarProps {}
 
 const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Container>
-      <Stack spacing={4} direction="row">
-        <Image src="/icon-full.svg" alt="icon" width="158" height="36" loading="lazy" />
+      <Stack spacing={3} direction="row">
+        <Image src={icon} alt="icon" width="120" height="30" loading="lazy" />
         <Stack spacing={0} direction="row">
           <MenuItem variant="body1">
             <Link href="/challenge">Challenge</Link>

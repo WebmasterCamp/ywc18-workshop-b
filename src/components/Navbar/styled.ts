@@ -6,7 +6,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing(0, 3)};
+  padding: ${({ theme }) => theme.spacing(0, 10)};
 `
 
 export const MenuItem = styled(Typography)`
