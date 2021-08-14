@@ -2,11 +2,12 @@ import styled from '@emotion/styled'
 import { Avatar, Typography } from '@material-ui/core'
 
 export const Container = styled.div`
+  max-width: 100%;
   background-color: ${({ theme }) => theme.palette.primary.main};
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: ${({ theme }) => theme.spacing(0, 10)};
+  padding: ${({ theme }) => theme.spacing(0, 3)};
 `
 
 export const MenuItem = styled(Typography)`
