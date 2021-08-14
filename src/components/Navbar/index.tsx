@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Stack, Typography, Hidden } from '@material-ui/core'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -38,7 +39,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Link>
         <Link href="/profile" passHref>
           <StyledAvatar sizes="small" style={{ cursor: 'pointer' }}>
-            H
+            <img src="/img/profile.png" alt="" width="32" height="32" />
           </StyledAvatar>
         </Link>
       </Stack>

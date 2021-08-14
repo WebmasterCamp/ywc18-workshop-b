@@ -32,7 +32,7 @@ export default function Challenge() {
         <ProfRow>
           <Image src="/img/profile.png" alt="" />
           <div style={{ flex: '1 1 0', marginLeft: 16 }}>
-            <h2>YoungWebMaster Camp</h2>
+            <h2>Benjaporn Amornrat</h2>
             <div
               className={css`
                 background: #fce19b;
@@ -53,7 +53,7 @@ export default function Challenge() {
               `}
             >
               <div>
-                <b>เล่นไปทั้งหมด:</b> 1:41 นาที
+                <b>เล่นไปทั้งหมด:</b> 2:00 นาที
               </div>
               <div>
                 <b>ชาเลนจ์ทั้งหมด:</b> 1 ชาเลนจ์
