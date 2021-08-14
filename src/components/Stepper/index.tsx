@@ -9,13 +9,15 @@ const StyledMuiStepLabel = styled(MuiStepLabel)`
   }
 `
 
-interface StepperProps {}
+interface StepperProps {
+  index: string
+}
 
-export default function Stepper({}: StepperProps) {
+export default function Stepper({ index }: StepperProps) {
   const steps = ['Select the symtoms you have', 'Let’s do a quick self-check', 'Finally, Get to know your goal !']
 
   return (
-    <MuiStepper activeStep={0} alternativeLabel>
+    <MuiStepper activeStep={parseInt(index) - 1} alternativeLabel>
       {steps.map((label) => (
         <MuiStep key={label}>
           <StyledMuiStepLabel>{label}</StyledMuiStepLabel>
