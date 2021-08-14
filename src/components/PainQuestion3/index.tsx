@@ -1,3 +1,4 @@
+import { useRouter } from 'next/dist/client/router'
 import {
   Dialog,
   DialogActions,
@@ -82,25 +83,32 @@ interface ConfirmDialogProps {
 }
 
 const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
+  const router = useRouter()
+
   const handleOK = () => {
-    // push noti
+    window.OneSignal?.push(() => {
+      window.OneSignal?.showSlidedownPrompt({ force: true })
+    })
+  }
+
+  const nextPage = () => {
+    router.push('/game')
   }
 
   return (
     <Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
-      <DialogTitle id="responsive-dialog-title">ติมตามข่าวสาร ไม่พลาดทุกการแจ้งเตือน</DialogTitle>
+      <DialogTitle id="responsive-dialog-title">ไม่ต้องกลัวลืมยืดเส้นอีกต่อไป</DialogTitle>
       <DialogContent>
         <DialogContentText>
-          Let Google help apps determine location. This means sending anonymous location data to Google, even when no
-          apps are running.
+          เพียงแค่ท่านกดปุ่ม &quot;รับการแจ้งเตือน&quot; ท่านก็จะได้รับการแจ้งเตือนทุกๆ ครั้งเมื่อถึงเวลายืดเส้นของท่าน
         </DialogContentText>
       </DialogContent>
       <DialogActions>
-        <Button autoFocus onClick={handleClose} color="primary">
-          Disagree
+        <Button autoFocus onClick={nextPage} color="primary">
+          เอาไว้คราวหลัง
         </Button>
-        <Button onClick={handleOK} color="primary" autoFocus variant="contained">
-          OK
+        <Button onClick={nextPage} color="primary" autoFocus variant="contained">
+          รับการแจ้งเตือน
         </Button>
       </DialogActions>
     </Dialog>

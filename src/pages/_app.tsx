@@ -26,8 +26,11 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>LungChana</title>
-        <meta name="description" content="LungChana" />
+        <title>หลังชนะ - LungChana</title>
+        <meta
+          name="description"
+          content="Office Syndrome Buddy เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme}>

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { Stack, Typography, Hidden } from '@material-ui/core'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -12,7 +13,9 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Container>
       <Stack spacing={{ xs: 3, sm: 3 }} direction="row" style={{ width: '100%' }}>
-        <Image src={icon} alt="icon" width="120" height="30" loading="lazy" />
+        <Link href="/" passHref>
+          <Image src={icon} alt="icon" width="120" height="30" loading="lazy" />
+        </Link>
         <Hidden smDown>
           <Stack spacing={0} direction="row">
             <MenuItem variant="body1">
@@ -23,9 +26,6 @@ const Navbar: React.FC<NavbarProps> = () => {
             </MenuItem>
             <MenuItem variant="body1">
               <Link href="/redeem">สิทธิพิเศษ</Link>
-            </MenuItem>
-            <MenuItem variant="body1">
-              <Link href="/about">เกี่ยวกับเรา</Link>
             </MenuItem>
           </Stack>
         </Hidden>
@@ -38,7 +38,7 @@ const Navbar: React.FC<NavbarProps> = () => {
         </Link>
         <Link href="/profile" passHref>
           <StyledAvatar sizes="small" style={{ cursor: 'pointer' }}>
-            H
+            <img src="/img/profile.png" alt="" width="32" height="32" />
           </StyledAvatar>
         </Link>
       </Stack>

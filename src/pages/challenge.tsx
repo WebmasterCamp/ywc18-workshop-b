@@ -56,6 +56,12 @@ export default function Challenge() {
         >
           แล้วเจอกันอีกครั้งตอน {new Date().getHours() + 1}:00
         </p>
+        <h2>บันทึกรายเดือน (ส.ค.)</h2>
+        <Image src="/img/12day.png" alt="" width="1251" height="85" />
+        <br />
+        <div style={{ textAlign: 'right' }}>
+          <Button variant="outlined">ดูเพิ่มเติม</Button>
+        </div>
         <br />
         <p style={{ display: 'flex', alignItems: 'center' }}>
           คะแนนที่มี: 5&nbsp;&nbsp;
