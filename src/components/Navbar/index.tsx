@@ -16,25 +16,31 @@ const Navbar: React.FC<NavbarProps> = () => {
         <Hidden smDown>
           <Stack spacing={0} direction="row">
             <MenuItem variant="body1">
-              <Link href="/challenge">Challenge</Link>
+              <Link href="/challenge">ชาเลนจ์</Link>
             </MenuItem>
             <MenuItem variant="body1">
-              <Link href="/content">Content</Link>
+              <Link href="/content">บทความ</Link>
             </MenuItem>
             <MenuItem variant="body1">
-              <Link href="/redeem">Redeem</Link>
+              <Link href="/redeem">สิทธิพิเศษ</Link>
             </MenuItem>
             <MenuItem variant="body1">
-              <Link href="/about">About Us</Link>
+              <Link href="/about">เกี่ยวกับเรา</Link>
             </MenuItem>
           </Stack>
         </Hidden>
       </Stack>
       <Stack spacing={1} direction="row" alignItems="center">
-        <StyledAvatar sizes="small">H</StyledAvatar>
-        <Typography variant="body1" color="white">
-          Anusorn
-        </Typography>
+        <Link href="/profile" passHref>
+          <Typography variant="body1" color="white" style={{ whiteSpace: 'nowrap', cursor: 'pointer' }}>
+            ประวัติของฉัน
+          </Typography>
+        </Link>
+        <Link href="/profile" passHref>
+          <StyledAvatar sizes="small" style={{ cursor: 'pointer' }}>
+            H
+          </StyledAvatar>
+        </Link>
       </Stack>
     </Container>
   )
