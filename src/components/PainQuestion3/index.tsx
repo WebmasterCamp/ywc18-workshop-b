@@ -1,9 +1,18 @@
-import { Stack, Typography } from '@material-ui/core'
+import {
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText,
+  DialogTitle,
+  Stack,
+  Typography,
+} from '@material-ui/core'
 import React, { useState } from 'react'
 import Link from 'next/link'
-import styled from '@emotion/styled'
 import { css } from '@emotion/css'
 import OtherButton from '@/components/Button'
+import Button from '@/components/Button'
+import styled from '@emotion/styled'
 
 interface ButtonProps {
   isClicked: boolean
@@ -67,24 +76,58 @@ const StyledButton = styled(OtherButton)`
   padding: ${({ theme }) => theme.spacing(1, 5)};
 `
 
+interface ConfirmDialogProps {
+  open: boolean
+  handleClose: () => void
+}
+
+const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
+  const handleOK = () => {
+    // push noti
+  }
+
+  return (
+    <Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+      <DialogTitle id="responsive-dialog-title">ติมตามข่าวสาร ไม่พลาดทุกการแจ้งเตือน</DialogTitle>
+      <DialogContent>
+        <DialogContentText>
+          Let Google help apps determine location. This means sending anonymous location data to Google, even when no
+          apps are running.
+        </DialogContentText>
+      </DialogContent>
+      <DialogActions>
+        <Button autoFocus onClick={handleClose} color="primary">
+          Disagree
+        </Button>
+        <Button onClick={handleOK} color="primary" autoFocus variant="contained">
+          OK
+        </Button>
+      </DialogActions>
+    </Dialog>
+  )
+}
+
 export default function PainQuestion3({}: PainQuestion3Props) {
   const items = ['1-2 ครั้ง', '3-4 ครั้ง', '5-6 ครั้ง', '7-8 ครั้ง']
 
+  const [open, setOpen] = useState(false)
+
   return (
-    <Stack spacing={8} style={{ marginTop: 32 }}>
-      <Stack spacing={1}>
-        <Painnnn header="คุณต้องการยืดกี่ครั้งต่อวัน" items={items} />
-      </Stack>
-      <Stack direction="row" spacing={4} justifyContent="center">
-        <Link href="/start/2" passHref>
-          <StyledButton variant="outlined">ย้อนกลับ</StyledButton>
-        </Link>
-        <Link href="/game" passHref>
-          <StyledButton variant="contained" style={{ color: 'white' }}>
+    <>
+      <Stack spacing={8} style={{ marginTop: 32 }}>
+        <Stack spacing={1}>
+          <Painnnn header="คุณต้องการยืดกี่ครั้งต่อวัน" items={items} />
+        </Stack>
+        <Stack direction="row" spacing={4} justifyContent="center">
+          <Link href="/start/2" passHref>
+            <StyledButton variant="outlined">ย้อนกลับ</StyledButton>
+          </Link>
+          <StyledButton variant="contained" style={{ color: 'white' }} onClick={() => setOpen(true)}>
             ตกลง
           </StyledButton>
-        </Link>
+        </Stack>
       </Stack>
-    </Stack>
+      <ConfirmDialog open={open} handleClose={() => setOpen(false)} />
+    </>
   )
 }
