@@ -4,8 +4,9 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Container as MuiContainer } from '@material-ui/core'
 import BackToHome from '@/components/BackToHome'
-import PainQuestion from '@/components/PainQuestion'
+import PainQuestion1 from '@/components/PainQuestion1'
 import { useRouter } from 'next/dist/client/router'
+import PainQuestion3 from '@/components/PainQuestion3'
 
 const Container = styled(MuiContainer)`
   margin-top: ${({ theme }) => theme.spacing(3)};
@@ -18,11 +19,11 @@ export default function StartPage() {
   const QuestionCase = () => {
     switch (index) {
       case '1':
-        return <PainQuestion />
+        return <PainQuestion1 />
       case '2':
         return <></>
       case '3':
-        return <></>
+        return <PainQuestion3 />
       default:
         return <>Not Found</>
     }
