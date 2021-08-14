@@ -19,7 +19,7 @@ const BaseHeader = styled(Typography)`
   text-align: center;
   color: #f98820;
 
-  margin: 56px;
+  margin: 56px 0 0;
 `
 
 const ImageBig = styled.img`
@@ -49,6 +49,12 @@ const GameFinish = () => {
     <Container>
       <TextCenter>
         <BaseHeader variant="h1">เก่งมาก คุณทำสำเร็จแล้ว!</BaseHeader>
+        <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          คะแนนที่ได้รับ: 3000&nbsp;&nbsp;
+          <img src="/img/gem2x.png" alt="" width="24" height="24" />
+        </p>
+
+        <br />
         <ImageBig src="/img/game_finish.png" alt="" />
 
         <p>
@@ -63,6 +69,7 @@ const GameFinish = () => {
           <ImageSocial src="/img/share.png" alt="" />
         </div>
 
+        <br />
         <br />
         <Row>
           <Column
