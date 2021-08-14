@@ -54,7 +54,6 @@ export default function StartPage() {
           บทความ
         </Typography>
         <Box mb={4}>
-          <Typography variant="h6">หัวข้อ</Typography>
           <Stack flexWrap="wrap" direction="row">
             {normalContents.map((props, index) => (
               <BlogBlock key={`nor-${index}`} {...props} />
