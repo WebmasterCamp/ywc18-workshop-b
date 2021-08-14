@@ -30,8 +30,6 @@ export default function StartPage() {
     }
   }
 
-  console.log(index)
-
   return (
     <>
       <BackToHome />
