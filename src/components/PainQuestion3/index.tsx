@@ -124,7 +124,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
         <Button autoFocus onClick={nextPage} color="primary">
           เอาไว้คราวหลัง
         </Button>
-        <Button onClick={nextPage} color="primary" autoFocus variant="contained">
+        <Button onClick={nextPage} color="primary" autoFocus variant="contained" style={{ color: 'white' }}>
           รับการแจ้งเตือน
         </Button>
       </DialogActions>
