@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router'
 import Button from 'src/components/Button'
 import Container from '@material-ui/core/Container'
 
@@ -17,6 +18,8 @@ const Column = styled.div`
 `
 
 export default function Home() {
+  const router = useRouter()
+
   return (
     <>
       <div
@@ -39,10 +42,18 @@ export default function Home() {
           className={css`
             margin-right: 8px;
           `}
+          onClick={() => router.push('/start/1')}
         >
           เริ่มกันเลย
         </Button>
-        <Button variant="outlined" size="large">
+        <Button
+          variant="outlined"
+          size="large"
+          onClick={() =>
+            // scroll to bottom
+            window.scrollTo(0, document.body.scrollHeight)
+          }
+        >
           ดูข้อมูลเพิ่มเติม
         </Button>
       </div>
@@ -55,6 +66,7 @@ export default function Home() {
       >
         <Container>
           <h2
+            id="whywegood"
             className={css`
               text-align: center;
             `}

@@ -93,6 +93,7 @@ const Game = () => {
         display: false,
       },
     },
+    animation: false,
   }
 
   useEffect(() => {

@@ -20,6 +20,8 @@ const DancingElement = styled.div`
   align-items: center;
   justify-content: center;
 
+  padding: 32px;
+
   > h1 {
     color: #fff;
   }
@@ -88,6 +90,8 @@ const UserOverlay = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  padding: 32px;
 `
 
 let socketUpdateInterval = null
