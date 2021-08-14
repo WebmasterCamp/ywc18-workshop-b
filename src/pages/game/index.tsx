@@ -7,6 +7,8 @@ import Card from '@material-ui/core/Card'
 import { Typography } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 
+import { Line } from 'react-chartjs-2'
+
 import { css } from '@emotion/css'
 import styled from '@emotion/styled'
 
@@ -53,7 +55,32 @@ const Game = () => {
   const [currentGid, setCurrentGid] = useState('')
   const [windowUrl, setWindowUrl] = useState('')
   const [isReady, setIsReady] = useState(false)
+  const [isHasData, setIsHasData] = useState(false)
   const [data, setData] = useState<any[]>([])
+
+  const transformedData = {
+    labels: new Array(data.length).fill(0).map((_, i) => i),
+    datasets: [
+      {
+        label: 'Alpha',
+        data: data.map(({ alpha }) => alpha),
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgba(255, 99, 132, 0.2)',
+      },
+      {
+        label: 'Beta',
+        data: data.map(({ beta }) => beta),
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgba(255, 99, 132, 0.2)',
+      },
+      {
+        label: 'Gamma',
+        data: data.map(({ gamma }) => gamma),
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgba(255, 99, 132, 0.2)',
+      },
+    ],
+  }
 
   useEffect(() => {
     setWindowUrl(window.location.href)
@@ -70,7 +97,10 @@ const Game = () => {
       let cgid = gid
 
       const mobileReady = ({ gid }) => {
-        if (gid === cgid) setIsReady(true)
+        if (gid === cgid) {
+          setIsHasData(true)
+          setIsReady(true)
+        }
       }
 
       const mobileData = ({ gid, dataSet }) => {
@@ -133,7 +163,7 @@ const Game = () => {
         ) : (
           <>
             <BaseHeader variant="h1">มาเริ่มกันเลย!</BaseHeader>
-            <p>{JSON.stringify(data)}</p>
+            {isHasData && <Line data={transformedData} />}
           </>
         )}
       </TextCenter>

@@ -50,7 +50,7 @@ const GameFinish = () => {
       <TextCenter>
         <BaseHeader variant="h1">เก่งมาก คุณทำสำเร็จแล้ว!</BaseHeader>
         <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          คะแนนที่ได้รับ: 3000&nbsp;&nbsp;
+          คะแนนที่ได้รับ: 5&nbsp;&nbsp;
           <img src="/img/gem2x.png" alt="" width="24" height="24" />
         </p>
 
