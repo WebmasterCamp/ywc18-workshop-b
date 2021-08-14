@@ -7,6 +7,7 @@ import BackToHome from '@/components/BackToHome'
 import PainQuestion1 from '@/components/PainQuestion1'
 import { useRouter } from 'next/dist/client/router'
 import PainQuestion3 from '@/components/PainQuestion3'
+import PainQuestion2 from '@/components/PainQuestion2'
 
 const Container = styled(MuiContainer)`
   margin-top: ${({ theme }) => theme.spacing(3)};
@@ -21,7 +22,7 @@ export default function StartPage() {
       case '1':
         return <PainQuestion1 />
       case '2':
-        return <></>
+        return <PainQuestion2 />
       case '3':
         return <PainQuestion3 />
       default:

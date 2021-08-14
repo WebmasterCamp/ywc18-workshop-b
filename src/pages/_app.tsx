@@ -29,8 +29,8 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>App Name</title>
-        <meta name="description" content="App Name" />
+        <title>LungChana</title>
+        <meta name="description" content="LungChana" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme}>
