@@ -217,6 +217,10 @@ const Game = () => {
           </>
         )}
       </TextCenter>
+      <br />
+      <br />
+      <br />
+      <br />
     </Container>
   )
 }

@@ -95,6 +95,10 @@ const GameFinish = () => {
         <br />
         <br />
       </TextCenter>
+      <br />
+      <br />
+      <br />
+      <br />
     </Container>
   )
 }

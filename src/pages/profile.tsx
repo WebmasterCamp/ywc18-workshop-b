@@ -12,7 +12,12 @@ const Image = styled.img`
 `
 
 const ProfRow = styled.div`
-  display: flex;
+  // display block in mobile
+  display: block;
+
+  @media (min-width: 1000px) {
+    display: flex;
+  }
 `
 
 export default function Challenge() {
@@ -73,9 +78,15 @@ export default function Challenge() {
             align-items: flex-start;
           `}
         >
-          <img src="/img/ach1.png" alt="" style={{ marginRight: 16 }} />
-          <img src="/img/ach2.png" alt="" style={{ marginRight: 16 }} />
-          <img src="/img/ach3.png" alt="" />
+          <div style={{ marginRight: 16 }}>
+            <img src="/img/ach1.png" alt="" style={{ width: '100%', height: 'auto' }} />
+          </div>
+          <div style={{ marginRight: 16 }}>
+            <img src="/img/ach2.png" alt="" style={{ width: '100%', height: 'auto' }} />
+          </div>
+          <div>
+            <img src="/img/ach3.png" alt="" style={{ width: '100%', height: 'auto' }} />
+          </div>
         </div>
         <br />
         <br />

@@ -37,6 +37,10 @@ export default function StartPage() {
         <Stepper index={index as string} />
         <QuestionCase />
       </Container>
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   )
 }
