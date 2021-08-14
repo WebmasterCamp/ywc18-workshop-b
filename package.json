@@ -11,6 +11,11 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "@emotion/cache": "^11.4.0",
+    "@emotion/react": "^11.4.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "@material-ui/core": "^5.0.0-beta.4",
     "next": "11.1.0",
     "qrcode.react": "^1.0.1",
     "react": "17.0.2",
