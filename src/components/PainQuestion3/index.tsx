@@ -14,12 +14,14 @@ import { css } from '@emotion/css'
 import OtherButton from '@/components/Button'
 import Button from '@/components/Button'
 import styled from '@emotion/styled'
+import { FaStar } from 'react-icons/fa'
 
 interface ButtonProps {
   isClicked: boolean
 }
 
 const ButtonClickable = styled.div`
+  position: relative;
   padding: ${({ theme }) => theme.spacing(1, 3)};
   min-width: 200px;
   cursor: pointer;
@@ -29,6 +31,7 @@ const ButtonClickable = styled.div`
 `
 
 const ButtonClickableTrue = styled.div`
+  position: relative;
   padding: ${({ theme }) => theme.spacing(1, 3)};
   min-width: 200px;
   cursor: pointer;
@@ -56,13 +59,27 @@ const Painnnn: React.FC<{ header: string; items: string[] }> = ({ header, items 
           if (state !== index + 1)
             return (
               <ButtonClickable key={index} onClick={handleClick(index + 1)}>
-                <Typography align="center">{item}</Typography>
+                <Typography align="center">{item}</Typography>{' '}
+                {index === 2 && (
+                  <div style={{ position: 'absolute', top: 9, right: 10, color: '#FACA51' }}>
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                )}
               </ButtonClickable>
             )
           else
             return (
               <ButtonClickableTrue key={index} onClick={handleClick(index + 1)}>
                 <Typography align="center">{item}</Typography>
+                {index === 2 && (
+                  <div style={{ position: 'absolute', top: 9, right: 10, color: 'black' }}>
+                    <FaStar />
+                    <FaStar />
+                    <FaStar />
+                  </div>
+                )}
               </ButtonClickableTrue>
             )
         })}
