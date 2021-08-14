@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { useRouter } from 'next/router'
 import React from 'react'
 
 import Button from 'src/components/Button'
@@ -45,6 +46,8 @@ const Row = styled.div`
 const Column = styled.div``
 
 const GameFinish = () => {
+  const router = useRouter()
+
   return (
     <Container>
       <TextCenter>
@@ -77,10 +80,14 @@ const GameFinish = () => {
               margin-right: 16px;
             `}
           >
-            <Button variant="outlined">กลับชาเลนจ์รวม</Button>
+            <Button variant="outlined" onClick={() => router.push('/profile')}>
+              กลับหน้าโปรไฟล์
+            </Button>
           </Column>
           <Column>
-            <Button variant="contained">ดูความคืบหน้าของคุณ</Button>
+            <Button variant="contained" onClick={() => router.push('/challenge')}>
+              ดูความคืบหน้าของคุณ
+            </Button>
           </Column>
         </Row>
 
