@@ -83,6 +83,10 @@ const Game = () => {
     })
   }, [])
 
+  const isForceReady = () => {
+    setIsReady(true)
+  }
+
   return (
     <Container>
       <TextCenter>
@@ -122,7 +126,7 @@ const Game = () => {
             >
               Don&apos;t have smartphone?
             </UseFont>
-            <Button variant="contained" size="large">
+            <Button variant="contained" size="large" onClick={isForceReady}>
               Join without smartphone
             </Button>
           </>
