@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 import { Stack } from '@material-ui/core'
-import Pain from '@/components/PainQuestion/components/Pain'
+import Pain from '@/components/Pain'
 import Button from '@/components/Button'
 import Link from 'next/link'
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Stepper as MuiStepper, Step as MuiStep, StepLabel as MuiStepLabel } from '@material-ui/core'
+import { Stepper as MuiStepper, Step as MuiStep, StepLabel as MuiStepLabel, Typography, Box } from '@material-ui/core'
 
 import styled from '@emotion/styled'
 
@@ -14,15 +14,23 @@ interface StepperProps {
 }
 
 export default function Stepper({ index }: StepperProps) {
-  const steps = ['Select the symtoms you have', 'Let’s do a quick self-check', 'Finally, Get to know your goal !']
+  const inx = parseInt(index) - 1
+  const steps = ['เลือกอาการที่คุณมี', 'ไหนลองประเมินตัวเองดูซิ', 'สุดท้ายแล้ว มาตั้งเป้าหมายกัน!']
 
   return (
-    <MuiStepper activeStep={parseInt(index) - 1} alternativeLabel>
-      {steps.map((label) => (
-        <MuiStep key={label}>
-          <StyledMuiStepLabel>{label}</StyledMuiStepLabel>
-        </MuiStep>
-      ))}
-    </MuiStepper>
+    <>
+      <MuiStepper activeStep={inx} alternativeLabel>
+        {steps.map((label) => (
+          <MuiStep key={label}>
+            <StyledMuiStepLabel></StyledMuiStepLabel>
+          </MuiStep>
+        ))}
+      </MuiStepper>
+      <Box mt={3}>
+        <Typography variant="h4" align="center">
+          {steps[inx]}
+        </Typography>
+      </Box>
+    </>
   )
 }

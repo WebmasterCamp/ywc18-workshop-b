@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Stack, Typography } from '@material-ui/core'
-import Clickable from '@/components/PainQuestion/components/Clickable'
+import Clickable from '@/components/Clickable'
 
 interface PainProps {
   header: string
@@ -11,7 +11,7 @@ interface PainProps {
 export default function Pain({ header, questions }: PainProps) {
   return (
     <Stack spacing={2} style={{ width: '100%', padding: '0 50px' }} alignItems="center">
-      <Typography variant="h4" align="center">
+      <Typography variant="h4" align="center" color="primary">
         {header}
       </Typography>
       {questions.map((content) => (
