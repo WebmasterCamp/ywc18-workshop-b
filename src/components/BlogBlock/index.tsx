@@ -65,19 +65,26 @@ const PremiumModal: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
 export default function BlogBlock({ title, image, premium }: BlogBlockProps) {
   const [open, setOpen] = useState(false)
 
+  const handleClose = () => {
+    console.log(open)
+    setOpen(false)
+  }
+
   if (premium) {
     return (
-      <StyledCard onClick={() => setOpen(true)}>
-        <CardActionArea>
-          <CardMedia image={image} title="Contemplative Reptile" style={{ height: 188.86 }} />
-          <CardContent>
-            <Typography gutterBottom variant="body1" component="h2">
-              {title}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <PremiumModal open={open} handleClose={() => setOpen(false)} />
-      </StyledCard>
+      <>
+        <StyledCard onClick={() => setOpen(true)}>
+          <CardActionArea>
+            <CardMedia image={image} title="Contemplative Reptile" style={{ height: 188.86 }} />
+            <CardContent>
+              <Typography gutterBottom variant="body1" component="h2">
+                {title}
+              </Typography>
+            </CardContent>
+          </CardActionArea>
+        </StyledCard>
+        <PremiumModal open={open} handleClose={handleClose} />
+      </>
     )
   }
   return (

@@ -63,8 +63,6 @@ const Painnnn: React.FC<{ header: string; items: string[] }> = ({ header, items 
                 {index === 2 && (
                   <div style={{ position: 'absolute', top: 9, right: 10, color: '#FACA51' }}>
                     <FaStar />
-                    <FaStar />
-                    <FaStar />
                   </div>
                 )}
               </ButtonClickable>
@@ -75,8 +73,6 @@ const Painnnn: React.FC<{ header: string; items: string[] }> = ({ header, items 
                 <Typography align="center">{item}</Typography>
                 {index === 2 && (
                   <div style={{ position: 'absolute', top: 9, right: 10, color: 'black' }}>
-                    <FaStar />
-                    <FaStar />
                     <FaStar />
                   </div>
                 )}
