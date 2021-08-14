@@ -78,7 +78,7 @@ export default function Home() {
               font-size: 2rem;
             `}
           >
-            ทำไมเราถึงดีที่สุดสำหรับคุณ
+            เราสามารถมอบอะไรให้คุณได้บ้าง
           </h2>
           <Row>
             <Column>
