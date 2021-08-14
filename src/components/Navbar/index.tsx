@@ -1,11 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import { Stack, Typography, Hidden } from '@material-ui/core'
+import { Stack, Typography, Hidden, Box } from '@material-ui/core'
 import Image from 'next/image'
 import Link from 'next/link'
+import styled from '@emotion/styled'
 
 import { Container, MenuItem, StyledAvatar } from './styled'
 
 import icon from '../../../public/icon-full.svg'
+
+const StyledA = styled.a`
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 interface NavbarProps {}
 
@@ -13,20 +21,14 @@ const Navbar: React.FC<NavbarProps> = () => {
   return (
     <Container>
       <Stack spacing={{ xs: 3, sm: 3 }} direction="row" style={{ width: '100%' }}>
-        <Link href="/" passHref>
+        <StyledA href="/">
           <Image src={icon} alt="icon" width="120" height="30" loading="lazy" />
-        </Link>
+        </StyledA>
         <Hidden smDown>
           <Stack spacing={0} direction="row">
-            <MenuItem variant="body1">
-              <Link href="/challenge">ชาเลนจ์</Link>
-            </MenuItem>
-            <MenuItem variant="body1">
-              <Link href="/content">บทความ</Link>
-            </MenuItem>
-            <MenuItem variant="body1">
-              <Link href="/redeem">สิทธิพิเศษ</Link>
-            </MenuItem>
+            <MenuItem href="/challenge">ชาเลนจ์</MenuItem>
+            <MenuItem href="/content">บทความ</MenuItem>
+            <MenuItem href="/redeem">สิทธิพิเศษ</MenuItem>
           </Stack>
         </Hidden>
       </Stack>

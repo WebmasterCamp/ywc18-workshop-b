@@ -10,9 +10,11 @@ export const Container = styled.div`
   padding: ${({ theme }) => theme.spacing(0, 3)};
 `
 
-export const MenuItem = styled(Typography)`
+export const MenuItem = styled.a`
   padding: ${({ theme }) => theme.spacing(2, 3)};
   transition: background 0.3s ease;
+  color: white;
+  text-decoration: none;
 
   display: flex;
   align-items: center;
