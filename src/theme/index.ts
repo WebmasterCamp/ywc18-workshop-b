@@ -16,7 +16,9 @@ const theme = createTheme({
       primary: '#313131',
     },
   },
-  typography: {},
+  typography: {
+    fontFamily: ['Kanit', 'Sarabun', 'sans-serif'].join(','),
+  },
 })
 
 export default theme

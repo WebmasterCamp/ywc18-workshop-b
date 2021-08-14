@@ -3,6 +3,9 @@ import { AppProps } from 'next/app'
 import Head from 'next/head'
 import { useEffect } from 'react'
 import theme from '@/theme'
+import Navbar from '@/components/Navbar'
+
+import '@/styles/global.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -31,6 +34,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider theme={theme}>
+        <Navbar />
         <Component {...pageProps} />
       </ThemeProvider>
     </>
