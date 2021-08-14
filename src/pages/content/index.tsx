@@ -36,14 +36,17 @@ export default function StartPage() {
     {
       title: 'เทรนเนอร์แบมแบมยอมรับเคยเป็น Office Syndrome แต่หายได้ด้วยวิธี.... ',
       image: '/content-ex/1.png',
+      premium: true,
     },
     {
       title: 'รู้หรือไม่ ? ไม่ต้องนั่งทำงานก็เป็น Office Syndrome ได้ หากคุณมีพฤติกรรมแบบนี้',
       image: '/content-ex/2.png',
+      premium: true,
     },
     {
       title: '4 วิธีจัดโต๊ะทำงาน ที่นั่งกี่ชั่วโมง ก็ไม่เมื่อย !',
       image: '/content-ex/3.png',
+      premium: true,
     },
   ]
 
