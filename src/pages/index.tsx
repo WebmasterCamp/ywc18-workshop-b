@@ -41,6 +41,7 @@ export default function Home() {
           size="large"
           className={css`
             margin-right: 8px;
+            color: white;
           `}
           onClick={() => router.push('/start/1')}
         >
