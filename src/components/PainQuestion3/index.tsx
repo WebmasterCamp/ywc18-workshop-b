@@ -82,6 +82,10 @@ interface ConfirmDialogProps {
 }
 
 const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
+  const handleOK = () => {
+    // push noti
+  }
+
   return (
     <Dialog open={open} onClose={handleClose} aria-labelledby="responsive-dialog-title">
       <DialogTitle id="responsive-dialog-title">ติมตามข่าวสาร ไม่พลาดทุกการแจ้งเตือน</DialogTitle>
@@ -95,7 +99,7 @@ const ConfirmDialog: React.FC<ConfirmDialogProps> = ({ open, handleClose }) => {
         <Button autoFocus onClick={handleClose} color="primary">
           Disagree
         </Button>
-        <Button onClick={handleClose} color="primary" autoFocus variant="contained">
+        <Button onClick={handleOK} color="primary" autoFocus variant="contained">
           OK
         </Button>
       </DialogActions>
