@@ -1,5 +1,5 @@
 import { Typography, Box, Stack, Avatar } from '@material-ui/core'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import styled from '@emotion/styled'
 import Button from '@/components/Button'
@@ -28,6 +28,7 @@ const Level: React.FC<LevelProps> = ({ level }) => {
 }
 const SmallAvatar = styled(Avatar)`
   transform: scale(0.7);
+  cursor: pointer;
 `
 
 const ImageEx: React.FC<{ item: number }> = ({ item }) => {
@@ -37,16 +38,22 @@ const ImageEx: React.FC<{ item: number }> = ({ item }) => {
     'ดึงไหล่ กดแขนเข้าลำตัว',
     'ดึงศอก แขนชิดใบหู',
   ]
+
+  const [state, setState] = useState<number>(-1)
+
+  const handleClick = (index: number) => () => {
+    setState(index)
+  }
+
   return (
     <Box>
       <Image src={`/assets/ex${item}.jpg`} alt="" width="240" height="240" />
       <Typography align="center">{label[item - 1]}</Typography>
       <Stack spacing={0} justifyContent="center" direction="row">
-        <SmallAvatar src={`/face/fa${5}.svg`} />
-        <SmallAvatar src={`/face/fa${4}.svg`} />
-        <SmallAvatar src={`/face/fa${3}.svg`} />
-        <SmallAvatar src={`/face/fa${2}.svg`} />
-        <SmallAvatar src={`/face/fa${1}.svg`} />
+        {[1, 2, 3, 4, 5].map((index) => {
+          if (state === index + 1) return <SmallAvatar src={`/face/fa${index}.svg`} onClick={handleClick(index + 1)} />
+          else return <SmallAvatar src={`/face-gray/fa${index}.svg`} onClick={handleClick(index + 1)} />
+        })}
       </Stack>
     </Box>
   )
