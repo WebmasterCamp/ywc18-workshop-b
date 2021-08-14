@@ -146,7 +146,7 @@ const Game = () => {
             <CardContainer>
               <Card>
                 <CardContent>
-                  <QRCode value={'/game/' + currentGid} />
+                  <QRCode value={windowUrl + '/' + currentGid} />
                 </CardContent>
               </Card>
             </CardContainer>
