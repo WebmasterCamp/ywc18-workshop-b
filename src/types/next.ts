@@ -9,3 +9,9 @@ export type NextApiResponseServerIO = NextApiResponse & {
     }
   }
 }
+
+declare global {
+  interface Window {
+    OneSignal: any
+  }
+}
