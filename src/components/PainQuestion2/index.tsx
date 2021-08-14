@@ -71,11 +71,11 @@ export default function PainQuestion2({}: PainQuestion2Props) {
       </Box>
       <Box mt={4}>
         <Stack spacing={5} justifyContent="center" direction="row">
-          <Level level={5} />
-          <Level level={4} />
-          <Level level={3} />
-          <Level level={2} />
           <Level level={1} />
+          <Level level={2} />
+          <Level level={3} />
+          <Level level={4} />
+          <Level level={5} />
         </Stack>
         <Stack spacing={5} justifyContent="center" direction="row" style={{ marginTop: 30 }}>
           <ImageEx item={1} />
