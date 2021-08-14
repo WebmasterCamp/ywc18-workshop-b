@@ -32,7 +32,7 @@ export default function Home() {
       >
         <img src="/img/logo_landing.png" alt="" width="400" height="110" />
         <h1 style={{ color: '#F98820', margin: '8px 0' }}>Office Syndrome Buddy</h1>
-        <p style={{ margin: 0 }}>เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!</p>
+        <p style={{ margin: 0, fontSize: '1.1rem' }}>เพื่อนคู่ใจที่จะทำให้การเปลี่ยนแปลงสุขภาพกลายเป็นเรื่องสนุก!</p>
         <br />
         <br />
         <br />
@@ -70,6 +70,7 @@ export default function Home() {
             id="whywegood"
             className={css`
               text-align: center;
+              font-size: 2rem;
             `}
           >
             ทำไมเราถึงดีที่สุดสำหรับคุณ
@@ -77,7 +78,7 @@ export default function Home() {
           <Row>
             <Column>
               <img src="/img/fun.png" alt="" width="144" height="144" />
-              <h3 style={{ color: '#F98820' }}>สนุก</h3>
+              <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>สนุก</h3>
               <p>
                 บำบัด Office Syndrome
                 <br />
@@ -86,7 +87,7 @@ export default function Home() {
             </Column>
             <Column>
               <img src="/img/fast.png" alt="" width="144" height="144" />
-              <h3 style={{ color: '#F98820' }}>รวดเร็ว</h3>
+              <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>รวดเร็ว</h3>
               <p>
                 ใช้เวลาเล่นชาเลนจ์เฉลี่ย
                 <br />
@@ -95,7 +96,7 @@ export default function Home() {
             </Column>
             <Column>
               <img src="/img/special.png" alt="" width="144" height="144" />
-              <h3 style={{ color: '#F98820' }}>ฟรี</h3>
+              <h3 style={{ color: '#F98820', fontSize: '1.5rem', marginBottom: 0 }}>ฟรี</h3>
               <p>
                 สุขภาพดี
                 <br />

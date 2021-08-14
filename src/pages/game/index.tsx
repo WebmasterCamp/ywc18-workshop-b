@@ -155,14 +155,20 @@ const Game = () => {
                 padding-top: 8px;
               `}
             >
-              <a
+              <div
                 className={css`
                   color: #a9a9a9;
                 `}
-                href={windowUrl + '/' + currentGid}
               >
                 {windowUrl + '/' + currentGid}
-              </a>
+              </div>
+              <div
+                className={css`
+                  color: #a9a9a9;
+                `}
+              >
+                (ใช้ได้แค่โทรศัพท์ Android ในขณะนี้)
+              </div>
             </Typography>
             <br />
             <UseFont
