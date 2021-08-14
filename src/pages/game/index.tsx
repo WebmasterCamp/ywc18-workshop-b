@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 import { io } from 'socket.io-client'
 import QRCode from 'qrcode.react'
@@ -8,6 +9,8 @@ import { Typography } from '@material-ui/core'
 import Container from '@material-ui/core/Container'
 
 import { Line } from 'react-chartjs-2'
+
+import YouTube from 'react-youtube'
 
 import { css } from '@emotion/css'
 import styled from '@emotion/styled'
@@ -52,6 +55,8 @@ const CardContent = styled.span`
 `
 
 const Game = () => {
+  const router = useRouter()
+
   const [currentGid, setCurrentGid] = useState('')
   const [windowUrl, setWindowUrl] = useState('')
   const [isReady, setIsReady] = useState(false)
@@ -64,22 +69,30 @@ const Game = () => {
       {
         label: 'Alpha',
         data: data.map(({ alpha }) => alpha),
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: '#FF6384',
+        borderColor: '#FF638422',
       },
       {
         label: 'Beta',
         data: data.map(({ beta }) => beta),
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: '#4BC0C0',
+        borderColor: '#4BC0C022',
       },
       {
         label: 'Gamma',
         data: data.map(({ gamma }) => gamma),
-        backgroundColor: 'rgb(255, 99, 132)',
-        borderColor: 'rgba(255, 99, 132, 0.2)',
+        backgroundColor: '#36A2EB',
+        borderColor: '#36A2EB22',
       },
     ],
+  }
+
+  const chartOptions = {
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
   }
 
   useEffect(() => {
@@ -115,6 +128,10 @@ const Game = () => {
 
   const isForceReady = () => {
     setIsReady(true)
+  }
+
+  const onVideoEnd = () => {
+    router.replace('/game/finish')
   }
 
   return (
@@ -162,8 +179,34 @@ const Game = () => {
           </>
         ) : (
           <>
-            <BaseHeader variant="h1">มาเริ่มกันเลย!</BaseHeader>
-            {isHasData && <Line data={transformedData} />}
+            <div style={{ position: 'relative' }}>
+              <BaseHeader variant="h1">มาเริ่มกันเลย!</BaseHeader>
+              <YouTube
+                videoId="pwMHIU7E6ik"
+                opts={{
+                  width: '704',
+                  height: '396',
+                  playerVars: {
+                    autoplay: 1,
+                    fs: 0,
+                    modestbranding: 1,
+                  },
+                }}
+                onEnd={onVideoEnd}
+              />
+              <div
+                className={css`
+                  position: absolute;
+                  bottom: 0;
+                  right: -30px;
+                  background: white;
+                  width: 250px;
+                  height: 150px;
+                `}
+              >
+                {isHasData && <Line data={transformedData} options={chartOptions} />}
+              </div>
+            </div>
           </>
         )}
       </TextCenter>
