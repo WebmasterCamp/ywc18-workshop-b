@@ -52,8 +52,8 @@ const GameFinish = () => {
     <Container>
       <TextCenter>
         <BaseHeader variant="h1">เก่งมาก คุณทำสำเร็จแล้ว!</BaseHeader>
-        <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          คะแนนที่ได้รับ: 5&nbsp;&nbsp;
+        <p style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.25rem' }}>
+          คะแนนที่ได้รับ:&nbsp;<span style={{ fontSize: '1.5rem', fontWeight: 600 }}>5</span>&nbsp;&nbsp;
           <img src="/img/gem2x.png" alt="" width="24" height="24" />
         </p>
 
@@ -85,7 +85,13 @@ const GameFinish = () => {
             </Button>
           </Column>
           <Column>
-            <Button variant="contained" onClick={() => router.push('/challenge')}>
+            <Button
+              variant="contained"
+              onClick={() => router.push('/challenge')}
+              className={css`
+                color: white;
+              `}
+            >
               ดูความคืบหน้าของคุณ
             </Button>
           </Column>

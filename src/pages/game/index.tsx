@@ -180,7 +180,7 @@ const Game = () => {
             >
               ไม่สะดวกใช้โทรศัพท์ตอนนี้?
             </UseFont>
-            <Button variant="contained" size="large" onClick={isForceReady}>
+            <Button variant="outlined" size="large" onClick={isForceReady}>
               เล่นแบบไม่ใช้โทรศัพท์
             </Button>
           </>
@@ -191,8 +191,8 @@ const Game = () => {
               <YouTube
                 videoId="Mtvtu8pfbyw"
                 opts={{
-                  width: '704',
-                  height: '396',
+                  width: '800',
+                  height: '450',
                   playerVars: {
                     autoplay: 1,
                     fs: 0,
@@ -205,7 +205,7 @@ const Game = () => {
                 className={css`
                   position: absolute;
                   bottom: 0;
-                  right: -30px;
+                  right: -75px;
                   background: white;
                   width: 250px;
                   height: 150px;

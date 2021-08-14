@@ -5,6 +5,7 @@ import { io } from 'socket.io-client'
 
 import Button from 'src/components/Button'
 import { Typography } from '@material-ui/core'
+import { css } from '@emotion/css'
 
 import styled from '@emotion/styled'
 const DancingElement = styled.div`
@@ -147,7 +148,14 @@ const GameSession: React.FC = () => {
         <UserOverlay>
           <img src="/img/phone.png" alt="" />
           <h1>ถือมือถือของคุณไว้ที่มือขวา ถ้าพร้อมแล้วก็ไปกันเลย</h1>
-          <Button variant="contained" size="large" onClick={onReadyButtonClick}>
+          <Button
+            variant="contained"
+            size="large"
+            onClick={onReadyButtonClick}
+            className={css`
+              color: white;
+            `}
+          >
             พร้อม!
           </Button>
         </UserOverlay>
